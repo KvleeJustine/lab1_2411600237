@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KyleFit Track</title>
+
+    <!-- Bootstrap 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+<div class="container-fluid">
+
+    <div class="row">
+
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="col-md-3 col-lg-2 bg-success text-white min-vh-100 p-3">
+
+            <h3 class="text-center mb-4">
+                KyleFit Track
+            </h3>
+
+
+            <nav>
+
+                <a
+                    href="#dashboard"
+                    class="nav-link text-white mb-2"
+                >
+                    🏠 Dashboard
+                </a>
+
+
+                <a
+                    href="#steps"
+                    class="nav-link text-white mb-2"
+                >
+                    👣 Steps
+                </a>
+
+
+                <a
+                    href="#calories"
+                    class="nav-link text-white mb-2"
+                >
+                    🔥 Calories
+                </a>
+
+
+                <a
+                    href="#workouts"
+                    class="nav-link text-white mb-2"
+                >
+                    💪 Workouts
+                </a>
+
+
+                <a
+                    href="#goals"
+                    class="nav-link text-white mb-2"
+                >
+                    🎯 Goals
+                </a>
+
+
+                <hr>
+
+
+                <a
+                    href="#"
+                    id="logoutButton"
+                    class="nav-link text-white"
+                >
+                    🚪 Logout
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="col-md-9 col-lg-10 p-4">
+
+
+            <!-- DASHBOARD -->
+
+            <section id="dashboard" class="mb-5">
+
+                <h2 id="greeting">
+                    Welcome, User!
+                </h2>
+
+                <p class="text-muted">
+                    Track your fitness progress and stay active.
+                </p>
+
+
+                <!-- STAT CARDS -->
+
+                <div class="row g-3">
+
+
+                    <!-- STEPS -->
+
+                    <div class="col-md-6 col-xl-3">
+
+                        <div class="card shadow-sm h-100">
+
+                            <div class="card-body">
+
+                                <h6 class="text-muted">
+                                    👣 Steps
+                                </h6>
+
+                                <h2 id="stepsValue">
+                                    0
+                                </h2>
+
+                                <p class="mb-0">
+                                    steps today
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- CALORIES -->
+
+                    <div class="col-md-6 col-xl-3">
+
+                        <div class="card shadow-sm h-100">
+
+                            <div class="card-body">
+
+                                <h6 class="text-muted">
+                                    🔥 Calories
+                                </h6>
+
+                                <h2 id="caloriesValue">
+                                    0
+                                </h2>
+
+                                <p class="mb-0">
+                                    kcal burned
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- WORKOUTS -->
+
+                    <div class="col-md-6 col-xl-3">
+
+                        <div class="card shadow-sm h-100">
+
+                            <div class="card-body">
+
+                                <h6 class="text-muted">
+                                    💪 Workouts
+                                </h6>
+
+                                <h2 id="workoutsValue">
+                                    0
+                                </h2>
+
+                                <p class="mb-0">
+                                    completed
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- GOALS -->
+
+                    <div class="col-md-6 col-xl-3">
+
+                        <div class="card shadow-sm h-100">
+
+                            <div class="card-body">
+
+                                <h6 class="text-muted">
+                                    🎯 Goal
+                                </h6>
+
+                                <h2>
+                                    75%
+                                </h2>
+
+                                <p class="mb-0">
+                                    weekly progress
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 STEPS
+            ========================== -->
+
+            <section id="steps" class="mb-5">
+
+                <div class="card shadow-sm">
+
+                    <div class="card-body">
+
+                        <h3>
+                            👣 Steps
+                        </h3>
+
+                        <h4 class="mt-3">
+                            0 steps
+                        </h4>
+
+                        <p class="text-muted">
+                            Daily goal: 10,000 steps
+                        </p>
+
+                        <div class="progress">
+
+                            <div
+                                class="progress-bar bg-success"
+                                style="width: 0%;"
+                            >
+                                0%
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 CALORIES
+            ========================== -->
+
+            <section id="calories" class="mb-5">
+
+                <div class="card shadow-sm">
+
+                    <div class="card-body">
+
+                        <h3>
+                            🔥 Calories
+                        </h3>
+
+                        <h4 class="mt-3">
+
+                            <span id="caloriesSectionValue">
+                                0
+                            </span>
+
+                            kcal burned
+
+                        </h4>
+
+                        <p class="text-muted">
+                            Calories are updated when you add a workout.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 WORKOUTS
+            ========================== -->
+
+            <section id="workouts" class="mb-5">
+
+                <div class="card shadow-sm">
+
+                    <div class="card-body">
+
+
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+
+                            <h3 class="mb-0">
+                                💪 Workouts
+                            </h3>
+
+
+                            <button
+                                type="button"
+                                class="btn btn-success"
+                                data-bs-toggle="modal"
+                                data-bs-target="#workoutModal"
+                            >
+                                + Add Workout
+                            </button>
+
+                        </div>
+
+
+
+                        <!-- FILTER -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="workoutFilter"
+                                class="form-label"
+                            >
+                                Filter Workouts
+                            </label>
+
+
+                            <select
+                                id="workoutFilter"
+                                class="form-select"
+                            >
+
+                                <option value="all">
+                                    All Workouts
+                                </option>
+
+                                <option value="Push Ups">
+                                    Push Ups
+                                </option>
+
+                                <option value="Plank">
+                                    Plank
+                                </option>
+
+                                <option value="High Knees">
+                                    High Knees
+                                </option>
+
+                                <option value="Jumping Jacks">
+                                    Jumping Jacks
+                                </option>
+
+                                <option value="Squats">
+                                    Squats
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <p>
+
+                            Total workouts:
+
+                            <strong id="workoutCount">
+                                0
+                            </strong>
+
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 GOALS
+            ========================== -->
+
+            <section id="goals" class="mb-5">
+
+                <div class="card shadow-sm">
+
+                    <div class="card-body">
+
+                        <h3>
+                            🎯 Goals
+                        </h3>
+
+                        <p>
+                            Weekly workout goal
+                        </p>
+
+
+                        <div class="progress mb-3">
+
+                            <div
+                                class="progress-bar bg-success"
+                                style="width: 75%;"
+                            >
+                                75%
+                            </div>
+
+                        </div>
+
+
+                        <p class="mb-0">
+                            Goal: Complete 4 workouts this week.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 RECENT ACTIVITY
+            ========================== -->
+
+            <section id="recentActivity" class="mb-5">
+
+                <div class="card shadow-sm">
+
+                    <div class="card-body">
+
+                        <h3 class="mb-3">
+                            Recent Activity
+                        </h3>
+
+
+                        <div class="table-responsive">
+
+                            <table class="table table-bordered table-hover">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            Date
+                                        </th>
+
+                                        <th>
+                                            Workout
+                                        </th>
+
+                                        <th>
+                                            Duration
+                                        </th>
+
+                                        <th>
+                                            Calories
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="activityTable">
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     ADD WORKOUT MODAL
+========================== -->
+
+<div
+    class="modal fade"
+    id="workoutModal"
+    tabindex="-1"
+    aria-hidden="true"
+>
+
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+                    Add Workout
+                </h5>
+
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                ></button>
+
+            </div>
+
+
+
+            <div class="modal-body">
+
+
+                <!-- WORKOUT NAME -->
+
+                <div class="mb-3">
+
+                    <label
+                        for="workoutName"
+                        class="form-label"
+                    >
+                        Workout Name
+                    </label>
+
+
+                    <select
+                        id="workoutName"
+                        class="form-select"
+                    >
+
+                        <option value="">
+                            Select workout
+                        </option>
+
+                        <option value="Push Ups">
+                            Push Ups
+                        </option>
+
+                        <option value="Plank">
+                            Plank
+                        </option>
+
+                        <option value="High Knees">
+                            High Knees
+                        </option>
+
+                        <option value="Jumping Jacks">
+                            Jumping Jacks
+                        </option>
+
+                        <option value="Squats">
+                            Squats
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- DURATION -->
+
+                <div class="mb-3">
+
+                    <label
+                        for="workoutDuration"
+                        class="form-label"
+                    >
+                        Duration (minutes)
+                    </label>
+
+
+                    <input
+                        type="number"
+                        id="workoutDuration"
+                        class="form-control"
+                        placeholder="Example: 15"
+                        min="1"
+                    >
+
+                </div>
+
+
+
+                <!-- CALORIES -->
+
+                <div class="mb-3">
+
+                    <label
+                        for="workoutCalories"
+                        class="form-label"
+                    >
+                        Calories Burned
+                    </label>
+
+
+                    <input
+                        type="number"
+                        id="workoutCalories"
+                        class="form-control"
+                        placeholder="Example: 90"
+                        min="1"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <div class="modal-footer">
+
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                >
+                    Close
+                </button>
+
+
+                <button
+                    type="button"
+                    id="saveWorkoutButton"
+                    class="btn btn-success"
+                >
+                    Save Workout
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+     BOOTSTRAP JAVASCRIPT
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+
+DASHBOARD JAVASCRIPT
+
+<script src="js/dashboard.js"></script>
+
+
+</body>
+
+</html>

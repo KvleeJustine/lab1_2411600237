@@ -1,0 +1,132 @@
+/* Fitness Tracker Theme */
+
+:root {
+--primary: #198754;
+--dark-green: #14532D;
+--background: #F0FDF4;
+--light-green: #DCFCE7;
+--accent: #F59E0B;
+--text: #1F2937;
+}
+
+body {
+background-color: var(--background);
+color: var(--text);
+font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+
+.fitness-navbar {
+background-color: var(--dark-green);
+}
+
+.fitness-navbar .navbar-brand {
+color: white;
+}
+
+.fitness-navbar .nav-link {
+color: white;
+}
+
+.fitness-navbar .nav-link:hover {
+color: var(--light-green);
+}
+
+/* Sidebar */
+
+.sidebar {
+min-height: calc(100vh - 56px);
+background-color: white;
+border-right: 1px solid #ddd;
+}
+
+.sidebar h5 {
+color: var(--dark-green);
+}
+
+.sidebar .nav-link {
+color: var(--text);
+padding: 10px;
+border-radius: 8px;
+margin-bottom: 5px;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+background-color: var(--light-green);
+color: var(--dark-green);
+}
+
+/* Main Content */
+
+.main-content {
+min-height: calc(100vh - 56px);
+}
+
+/* Statistic Cards */
+
+.stat-card {
+border: none;
+border-radius: 12px;
+background-color: white;
+}
+
+.stat-card:hover {
+transform: translateY(-3px);
+transition: 0.2s;
+}
+
+.stat-icon {
+font-size: 30px;
+margin-bottom: 10px;
+}
+
+.stat-card h2 {
+color: var(--primary);
+}
+
+/* Login Page */
+
+.login-page {
+    background-color: var(--background);
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.login-card .card-header {
+    background-color: var(--dark-green);
+    color: white;
+    padding: 25px;
+}
+
+.fitness-logo {
+    font-size: 45px;
+    margin-bottom: 5px;
+}
+
+.login-card .form-control {
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.login-card .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.15);
+}
+
+.login-card .btn-success {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.login-card .btn-success:hover {
+    background-color: var(--dark-green);
+    border-color: var(--dark-green);
+}
