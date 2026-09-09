@@ -1,0 +1,405 @@
+/* ================================
+   KYLEFITTRACK - Lab 4 Style Sheet
+   Extended from Lab 3
+   Theme: Fitness Tracker (Green Monochromatic)
+   ================================ */
+
+/* ================================
+   CSS VARIABLES — EXACT LAB 3 COLORS
+   ================================ */
+:root {
+    --primary:       #198754;   /* Lab 3: primary */
+    --secondary:     #1a936f;   /* Lab 3: secondary */
+    --dark-green:    #14532D;   /* Lab 3: dark-green */
+    --background:    #f0f7f4;   /* Lab 3: background (EXACT) */
+    --light-accent:  #d4ece4;   /* Lab 3: light-accent (EXACT) */
+    --accent:        #f3a712;   /* Lab 3: accent (EXACT) */
+    --text:          #1a2e24;   /* Lab 3: text (EXACT) */
+
+    /* Lab 4 additions (same green family) */
+    --medium-green:  #166534;
+    --text-muted:    #4b5c4e;
+    --card-bg:       #ffffff;
+    --border:        #c8ddd4;
+    --accent-red:    #dc3545;
+    --shadow:        0 2px 12px rgba(20, 83, 45, 0.08);
+}
+
+/* ================================
+   GLOBAL (from Lab 3)
+   ================================ */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+}
+
+/* ================================
+   LOGIN PAGE (Lab 3 exact + extended)
+   ================================ */
+.login-body {
+    background-color: var(--background);
+    min-height: 100vh;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Lab 3: .login-card .card-header → mapped to .login-header */
+.login-header {
+    background-color: var(--dark-green);
+    color: white;
+    padding: 25px;
+}
+
+.login-header h2 {
+    color: white;
+}
+
+.login-footer {
+    background-color: var(--light-accent);
+}
+
+/* Lab 3: .fitness-logo */
+.brand-icon {
+    font-size: 45px;
+    margin-bottom: 5px;
+}
+
+/* Lab 3: form control focus */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.15);
+}
+
+/* Lab 3: login button → mapped to .btn-primary-custom */
+.btn-primary-custom {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.btn-primary-custom:hover,
+.btn-primary-custom:focus {
+    background-color: var(--dark-green);
+    border-color: var(--dark-green);
+    color: white;
+}
+
+.btn-primary-custom:active {
+    background-color: #0d5c3e;
+    border-color: #0d5c3e;
+    color: white;
+}
+
+/* ================================
+   NAVBAR (Lab 3 .fitness-navbar → .dashboard-navbar)
+   ================================ */
+.dashboard-navbar {
+    background-color: var(--dark-green);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+.dashboard-navbar .navbar-brand {
+    color: white;
+}
+
+.dashboard-navbar .nav-link {
+    color: white;
+    border-radius: 6px;
+    padding: 6px 10px;
+    transition: background 0.15s, color 0.15s;
+}
+
+.dashboard-navbar .nav-link:hover,
+.dashboard-navbar .nav-link.active {
+    background-color: var(--light-accent);
+    color: var(--dark-green);
+}
+
+.brand-icon-sm {
+    font-size: 1.4rem;
+}
+
+/* ================================
+   DASHBOARD BODY
+   ================================ */
+.dashboard-body {
+    background-color: var(--background);
+    min-height: 100vh;
+}
+
+/* ================================
+   STAT CARDS (Lab 3 extended)
+   ================================ */
+.stat-card {
+    border: none;
+    border-radius: 12px;
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(20, 83, 45, 0.15);
+}
+
+.stat-icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+
+/* Lab 3: .stat-card h2 → .stat-value */
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1.1;
+}
+
+.stat-sub {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+/* ================================
+   GENERAL CARDS (Lab 4 addition)
+   ================================ */
+.card {
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.card-header {
+    background-color: var(--light-accent);
+    border-bottom: 1px solid #b8d8cc;
+    border-radius: 12px 12px 0 0 !important;
+}
+
+/* ================================
+   CHART CARDS (Lab 4 addition)
+   ================================ */
+.chart-card-header {
+    background-color: var(--light-accent);
+    border-bottom: 1px solid #b8d8cc;
+    padding: 12px 16px;
+}
+
+.chart-card-header h6 {
+    color: var(--dark-green);
+}
+
+.chart-container-sm {
+    position: relative;
+    width: 100%;
+    height: 220px;
+}
+
+/* ================================
+   TABLE (Lab 4 addition)
+   ================================ */
+.table-header th {
+    background-color: var(--dark-green);
+    color: white;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    border: none;
+    padding: 10px 14px;
+}
+
+.table > tbody > tr {
+    transition: background 0.12s;
+}
+
+.table > tbody > tr:hover {
+    background-color: var(--light-accent);
+}
+
+/* ================================
+   INTENSITY BADGES (Lab 4 addition)
+   ================================ */
+.badge-high {
+    background-color: #fde8e8;
+    color: #7f1d1d;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.badge-medium {
+    background-color: #fef3c7;
+    color: #78350f;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.badge-low {
+    background-color: var(--light-accent);
+    color: var(--dark-green);
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* ================================
+   SEARCH HIGHLIGHT (Lab 4 addition)
+   ================================ */
+.search-highlight {
+    background-color: #f3a712;
+    color: #1a2e24;
+    border-radius: 3px;
+    padding: 0 2px;
+}
+
+/* ================================
+   LOW ACTIVITY ROW (Lab 4 addition)
+   ================================ */
+.low-activity-row {
+    background-color: #fff8e6 !important;
+    border-left: 3px solid var(--accent);
+}
+
+/* ================================
+   MODAL (Lab 4 addition)
+   ================================ */
+.modal-header-custom {
+    background-color: var(--dark-green);
+    color: white;
+}
+
+.modal-header-custom .modal-title {
+    color: white;
+}
+
+/* ================================
+   PROGRESS BARS (Lab 4 addition)
+   ================================ */
+.progress {
+    border-radius: 20px;
+    background-color: var(--light-accent);
+}
+
+.progress-bar {
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    transition: width 0.6s ease;
+}
+
+/* ================================
+   ALERTS (Lab 4 addition)
+   ================================ */
+.alert-warning {
+    background-color: #fff8e6;
+    border-color: #f3a712;
+    color: #78350f;
+}
+
+/* ================================
+   TOAST (Lab 4 addition)
+   ================================ */
+.toast {
+    min-width: 240px;
+}
+
+/* ================================
+   SIMULATION STATUS BADGE (Lab 4 addition)
+   ================================ */
+#simStatus {
+    font-size: 0.78rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+/* ================================
+   SIDEBAR (Lab 3 — kept for reference)
+   ================================ */
+.sidebar {
+    min-height: calc(100vh - 56px);
+    background-color: white;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar h5 {
+    color: var(--dark-green);
+}
+
+.sidebar .nav-link {
+    color: var(--text);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    background-color: var(--light-accent);
+    color: var(--dark-green);
+}
+
+/* ================================
+   RESPONSIVE — MOBILE (Lab 4 addition)
+   ================================ */
+@media (max-width: 576px) {
+    .stat-value {
+        font-size: 1.5rem;
+    }
+
+    .stat-icon {
+        font-size: 1.5rem;
+    }
+
+    .chart-container-sm {
+        height: 180px;
+    }
+
+    .dashboard-navbar .navbar-brand {
+        font-size: 1rem;
+    }
+
+    .table-header th {
+        font-size: 0.72rem;
+        padding: 8px 10px;
+    }
+
+    .card-header h5,
+    .card-header h6 {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .chart-container-sm {
+        height: 200px;
+    }
+}
